@@ -1,3 +1,4 @@
+//C:\schedulify-app\server\routes\booking.js
 const express = require('express');
 const { google } = require('googleapis');
 const { OpenAI } = require('openai');

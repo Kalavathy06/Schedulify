@@ -1,4 +1,4 @@
-
+//C:\schedulify-app\server\server.js
 const express = require('express');
 const app = express(); 
 require('dotenv').config();
@@ -23,6 +23,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(express.json());   // ✅ REQUIRED
 
 app.use(cors({
   origin: [
