@@ -26,7 +26,10 @@ app.use(passport.session());
 
 // Allow CORS from your React app
 app.use(cors({
-  origin: "https://your-frontend.vercel.app",
+  origin: [
+    "https://localhost:5173",
+  "https://schedulify-orcin.vercel.app"
+],
   credentials: true
 }));
 app.use(express.json()); // Only one instance needed
