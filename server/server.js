@@ -24,12 +24,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Allow CORS from your React app
 app.use(cors({
-  origin: true,
+  origin: "https://schedulify-orcin.vercel.app", // your Vercel URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-app.use(express.json()); // Only one instance needed
 
 // Apply Routes
 app.use('/api/bookings', bookingRoutes);
