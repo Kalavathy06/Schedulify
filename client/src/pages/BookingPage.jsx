@@ -18,7 +18,7 @@ export default function BookingPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const API_BASE = "https://schedulify-api.onrender.com";
+  const API_BASE = "https://schedulify-l4le.onrender.com";
 
 useEffect(() => {
   axios.get(`${API_BASE}/api/bookings/${username}/slots?date=${selectedDate}`)

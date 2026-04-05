@@ -25,8 +25,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(cors({
-  origin: "https://schedulify-orcin.vercel.app", // your Vercel URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: [
+    "http://localhost:5173",
+    "https://schedulify-orcin.vercel.app"
+  ],
   credentials: true
 }));
 

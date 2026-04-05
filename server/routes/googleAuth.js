@@ -17,7 +17,7 @@ router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
     // Pass the username back to the React frontend in the URL
-    res.redirect(`https://your-frontend.vercel.app/?username=${req.user.username}`);
+    res.redirect(`https://schedulify-orcin.vercel.app/?username=${req.user.username}`);
   }
 );
 
