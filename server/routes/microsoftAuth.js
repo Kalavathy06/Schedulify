@@ -13,7 +13,7 @@ router.get('/microsoft',
 router.get('/microsoft/callback', 
   passport.authenticate('microsoft', { failureRedirect: '/login' }),
   (req, res) => {
-    res.redirect(`http://localhost:5173/?username=${req.user.username}`);
+    res.redirect(`https://your-frontend.vercel.app/?username=${req.user.username}`);
   }
 );
 

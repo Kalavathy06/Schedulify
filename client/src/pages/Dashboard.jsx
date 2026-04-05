@@ -13,7 +13,7 @@ export default function Dashboard() {
 
   const saveAvailability = async () => {
     try {
-      await axios.post("http://localhost:5000/api/bookings/availability", {
+      await axios.post("https://schedulify-api.onrender.com/api/bookings/availability", {
         username,
         startHour: start,
         endHour: end
@@ -92,13 +92,13 @@ export default function Dashboard() {
           </h2>
           <p className="text-sm text-gray-500 mb-4">Connect your calendar and AI features.</p>
           <button
-            onClick={() => window.open("http://localhost:5000/auth/google", "_self")}
+            onClick={() => window.open("https://schedulify-api.onrender.com/auth/google", "_self")}
             className="w-full border py-2 rounded flex justify-center items-center gap-2 hover:bg-gray-50 transition"
           >
             Connect Google Calendar
           </button>
           <button
-            onClick={() => window.open("http://localhost:5000/auth/microsoft", "_self")}
+            onClick={() => window.open("https://schedulify-api.onrender.com/auth/microsoft", "_self")}
             className="w-full border py-2 rounded flex justify-center items-center gap-2 mt-3 hover:bg-gray-50 transition"
           >
             Connect Outlook Calendar

@@ -13,7 +13,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault(); // Prevents the page from refreshing
     try {
-      await axios.post("http://localhost:5000/api/auth/register", { 
+      await axios.post("https://schedulify-api.onrender.com/api/auth/register", {  
         username, 
         email, 
         password 

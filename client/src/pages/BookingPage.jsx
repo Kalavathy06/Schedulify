@@ -18,29 +18,28 @@ export default function BookingPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // Fetch available slots when date changes
-  useEffect(() => {
-    // In production, point to your backend URL
-    axios.get(`http://localhost:5000/api/bookings/${username}/slots?date=${selectedDate}`)
-      .then(res => setSlots(res.data.slots))
-      .catch(err => {
-        console.error(err);
-        // Fallback dummy data for testing without backend connection
-        setSlots([`${selectedDate}T09:00:00Z`, `${selectedDate}T14:30:00Z`]);
-      });
-  }, [selectedDate, username]);
+  const API_BASE = "https://schedulify-api.onrender.com";
+
+useEffect(() => {
+  axios.get(`${API_BASE}/api/bookings/${username}/slots?date=${selectedDate}`)
+    .then(res => setSlots(res.data.slots))
+    .catch(err => {
+      console.error(err);
+      setSlots([`${selectedDate}T09:00:00Z`, `${selectedDate}T14:30:00Z`]);
+    });
+}, [selectedDate, username]);
 
   const handleBooking = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/bookings/book', {
-        username,
-        slot: selectedSlot,
-        inviteeName: name,
-        inviteeEmail: email,
-        notes
-      });
+      await axios.post(`${API_BASE}/api/bookings/book`, {
+  username,
+  slot: selectedSlot,
+  inviteeName: name,
+  inviteeEmail: email,
+  notes
+});
       setSuccess(true);
     } catch (err) {
       console.log("Mocking success for demo purposes.");
