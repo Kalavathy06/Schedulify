@@ -27,7 +27,7 @@ app.use(passport.session());
 // Allow CORS from your React app
 app.use(cors({
   origin: [
-    "https://localhost:5173",
+    "http://localhost:5173",
   "https://schedulify-orcin.vercel.app"
 ],
   credentials: true
