@@ -3,6 +3,7 @@ const express = require('express');
 const app = express(); 
 require('dotenv').config();
 require('./config/passport');
+require("dotenv").config();
 
 const cors = require('cors');
 const mongoose = require('mongoose');

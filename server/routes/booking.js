@@ -1,12 +1,15 @@
 //C:\schedulify-app\server\routes\booking.js
 const express = require('express');
 const { google } = require('googleapis');
-const { OpenAI } = require('openai');
+const OpenAI = require('openai');
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 const User = require('../models/User');
 const moment = require('moment-timezone');
 const router = express.Router();
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // 0. UPDATE AVAILABILITY
 router.post('/availability', async (req, res) => {
